@@ -54,6 +54,10 @@
       display: block;
     }
 
+    .hamburger {
+      display: none;
+    }
+
     nav ul {
       list-style: none;
       display: flex;
@@ -759,6 +763,42 @@
       }
 
       nav ul { gap: 1rem; }
+
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 4px;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 26px;
+        height: 3px;
+        background: #fff;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #2e5e3e;
+        width: 200px;
+        padding: 1rem;
+        gap: 1rem;
+        box-shadow: -2px 4px 12px rgba(0,0,0,0.2);
+      }
+
+      nav ul.open {
+        display: flex;
+      }
     }
   </style>
 </head>
@@ -771,7 +811,12 @@
         <img class="nav-logo" src="Wild Paws logo2.png" alt="Wild Paws logo" />
       </div>
     </span>
-    <ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="nav-menu">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#gallery">Gallery</a></li>
@@ -1057,6 +1102,14 @@
     // Toggle suitable-for on card click
     document.querySelectorAll('.trail-card').forEach(card => {
       card.addEventListener('click', () => card.classList.toggle('open'));
+    });
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => navMenu.classList.toggle('open'));
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navMenu.classList.remove('open'));
     });
   </script>
 
