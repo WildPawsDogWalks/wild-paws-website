@@ -872,17 +872,13 @@
     <h2>About Me</h2>
     <div class="divider"></div>
     <p>
-      Hi, I'm Emily — the person behind Wild Paws. I've been walking dogs in South Liverpool for years
-      and honestly, it's the best job in the world. There's nothing better than watching a dog go absolutely
-      mental for a muddy puddle or finally making friends with another dog they'd been nervous around.
+      Hi, I'm Emily — the person behind Wild Paws. I'm a life-long dog lover and animal behaviour university graduate. I love to keep tails wagging and noses sniffing when you can't be there. I know how busy life can get, that's where I come in. I will pick your dog up, safely transport them to the park (after picking up a couple of other doggie friends on the way), a wonderful Wild Paws walk, and back home safely, ready to relax.
     </p>
     <p>
-      Every dog I walk gets treated like my own. I take small groups so each dog gets proper attention,
-      I always send updates so you know what they're up to, and I know the best spots in South Liverpool
-      for a proper adventure.
+      I always have your dog's welfare as my number one priority (fun being a close second) and treat them as though they are my own. Growing up with dogs at home, I know how special they are — truly part of the family!
     </p>
     <p>
-      You hand me your dog's lead with complete trust — I don't take that lightly.
+      With me, your dog can make new friends, explore the great outdoors, get lots of love and cuddles, all while you experience a guilt-free day away from your pooch. I make sure to keep the groups small (usually 3–4 dogs) so each dog gets lots of attention, plus I send picture/video updates after every walk so you can share the fun from wherever you are.
     </p>
   </div>
 
@@ -1044,22 +1040,23 @@
 
       <div class="or-divider">or fill in the form</div>
 
-      <form>
+      <form action="https://formspree.io/f/mwvwqweq" method="POST">
+        <input type="hidden" name="_next" value="https://wildpawsdogwalks.co.uk/thanks.html" />
         <div>
           <label for="name">Your Name</label>
-          <input type="text" id="name" placeholder="Jane Smith" required />
+          <input type="text" id="name" name="name" placeholder="Jane Smith" required />
         </div>
         <div>
           <label for="email">Email Address</label>
-          <input type="email" id="email" placeholder="jane@example.com" required />
+          <input type="email" id="email" name="email" placeholder="jane@example.com" required />
         </div>
         <div>
           <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" placeholder="07700 000000" />
+          <input type="tel" id="phone" name="phone" placeholder="07700 000000" />
         </div>
         <div>
           <label for="service">Service Interested In</label>
-          <select id="service">
+          <select id="service" name="service">
             <option value="">Select a service...</option>
             <option value="solo">Solo Walk</option>
             <option value="group">Group Walk</option>
@@ -1069,7 +1066,7 @@
         </div>
         <div>
           <label for="message">Tell me about your dog</label>
-          <textarea id="message" placeholder="Name, breed, how often you'd need walks — anything helps!"></textarea>
+          <textarea id="message" name="message" placeholder="Name, breed, how often you'd need walks — anything helps!"></textarea>
         </div>
         <button type="submit">Send Message</button>
       </form>
