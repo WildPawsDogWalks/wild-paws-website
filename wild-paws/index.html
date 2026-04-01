@@ -470,6 +470,40 @@
       font-size: 2.5rem;
     }
 
+    .gallery-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .gallery-nav button {
+      background: #2e5e3e;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .gallery-nav button:hover {
+      background: #1e3d28;
+    }
+
+    .gallery-nav button:disabled {
+      background: #aaa;
+      cursor: default;
+    }
+
+    .gallery-page-indicator {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
     /* AREA */
     .area-section {
       background: #eef6f1;
@@ -942,42 +976,26 @@
       <div class="divider" style="margin: 0 auto 0.5rem;"></div>
       <p style="text-align:center; color:#555; font-size:0.95rem; margin-bottom: 0.5rem;">A few familiar faces from our walks around Liverpool</p>
 
-      <div class="gallery-grid">
-
-        <!-- Replace src="" with your photo paths, e.g. src="photos/bella.jpg" -->
-        <!-- Update the captions to match each dog/location -->
-
-        <div class="gallery-item">
-          <div class="gallery-placeholder">🐶</div>
-          <div class="gallery-caption">Add your photo here</div>
-        </div>
-
-        <div class="gallery-item">
-          <div class="gallery-placeholder">🐶</div>
-          <div class="gallery-caption">Add your photo here</div>
-        </div>
-
-        <div class="gallery-item">
-          <div class="gallery-placeholder">🐶</div>
-          <div class="gallery-caption">Add your photo here</div>
-        </div>
-
-        <div class="gallery-item">
-          <div class="gallery-placeholder">🐶</div>
-          <div class="gallery-caption">Add your photo here</div>
-        </div>
-
-        <div class="gallery-item">
-          <div class="gallery-placeholder">🐶</div>
-          <div class="gallery-caption">Add your photo here</div>
-        </div>
-
-        <div class="gallery-item">
-          <div class="gallery-placeholder">🐶</div>
-          <div class="gallery-caption">Add your photo here</div>
-        </div>
-
+      <div class="gallery-grid" id="gallery-grid">
+        <div class="gallery-item"><img src="images/IMG_1341.jpeg" alt="Wild Paws dog walk"></div>
+        <div class="gallery-item"><img src="images/IMG_1370.jpeg" alt="Wild Paws dog walk"></div>
+        <div class="gallery-item"><img src="images/IMG_1413.jpeg" alt="Wild Paws dog walk"></div>
+        <div class="gallery-item"><img src="images/IMG_1418.jpeg" alt="Wild Paws dog walk"></div>
+        <div class="gallery-item"><img src="images/IMG_1458.jpeg" alt="Wild Paws dog walk"></div>
+        <div class="gallery-item"><img src="images/IMG_1503.jpeg" alt="Wild Paws dog walk"></div>
+        <div class="gallery-item"><img src="images/IMG_1528.jpeg" alt="Wild Paws dog walk"></div>
+        <div class="gallery-item"><img src="images/IMG_1634.JPG" alt="Wild Paws dog walk"></div>
+        <div class="gallery-item"><img src="images/IMG_1678.jpeg" alt="Wild Paws dog walk"></div>
+        <div class="gallery-item"><img src="images/IMG_1751.jpeg" alt="Wild Paws dog walk"></div>
+        <div class="gallery-item"><img src="images/IMG_1785.jpeg" alt="Wild Paws dog walk"></div>
       </div>
+
+      <div class="gallery-nav">
+        <button id="gallery-prev" aria-label="Previous">&#8592;</button>
+        <span class="gallery-page-indicator" id="gallery-indicator">1 / 2</span>
+        <button id="gallery-next" aria-label="Next">&#8594;</button>
+      </div>
+
     </div>
   </div>
 
@@ -1097,7 +1115,31 @@
       });
     }, { threshold: 0.15 });
 
-    document.querySelectorAll('.gallery-item, .fade-in').forEach(el => observer.observe(el));
+    // Gallery pagination
+    const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+    const perPage = 6;
+    let currentPage = 0;
+    const totalPages = Math.ceil(galleryItems.length / perPage);
+
+    function showPage(page) {
+      galleryItems.forEach((item, i) => {
+        item.style.display = (i >= page * perPage && i < (page + 1) * perPage) ? '' : 'none';
+        if (item.style.display !== 'none') {
+          setTimeout(() => item.classList.add('visible'), (i % perPage) * 120);
+        } else {
+          item.classList.remove('visible');
+        }
+      });
+      document.getElementById('gallery-indicator').textContent = (page + 1) + ' / ' + totalPages;
+      document.getElementById('gallery-prev').disabled = page === 0;
+      document.getElementById('gallery-next').disabled = page === totalPages - 1;
+    }
+
+    document.getElementById('gallery-prev').addEventListener('click', () => { currentPage--; showPage(currentPage); });
+    document.getElementById('gallery-next').addEventListener('click', () => { currentPage++; showPage(currentPage); });
+    showPage(0);
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
     // Toggle suitable-for on card click
     document.querySelectorAll('.trail-card').forEach(card => {
