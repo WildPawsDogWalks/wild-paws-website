@@ -760,6 +760,13 @@
       transform: translateY(0);
     }
 
+    /* Hero image position for landscape/desktop — shifts image down so head isn't cropped */
+    @media (min-width: 769px) {
+      .hero {
+        background-position: center 5%;
+      }
+    }
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
       .gallery-grid {
@@ -874,7 +881,7 @@
   <!-- HERO — replace dog-hero.jpg with your own photo -->
   <div class="hero">
     <div class="hero-content">
-      <img src="wpdw4.png" alt="Wild Paws Dog Walks" style="max-width: 620px; width: 90%; margin-bottom: 1.5rem;" />
+      <img src="wpdw4(v2).png" alt="Wild Paws Dog Walks" style="max-width: 620px; width: 90%; margin-bottom: 1.5rem;" />
       <a href="#contact" class="hero-cta">Book a Walk 🐾</a>
     </div>
   </div>
