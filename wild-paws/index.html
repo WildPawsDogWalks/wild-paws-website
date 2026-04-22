@@ -212,10 +212,10 @@
       margin-bottom: 1rem;
     }
 
-    /* SERVICES — trail layout */
+    /* SERVICES — card row layout */
     .services-section {
       padding: 5rem 2rem 3rem;
-      max-width: 860px;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
@@ -226,162 +226,50 @@
       text-align: center;
     }
 
-    .trail {
-      position: relative;
-      margin-top: 3rem;
-      padding-bottom: 1rem;
-    }
-
-    .trail::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      transform: translateX(-50%);
-      background-image: repeating-linear-gradient(
-        to bottom,
-        #a8d4b8 0px,
-        #a8d4b8 12px,
-        transparent 12px,
-        transparent 22px
-      );
-      border-radius: 2px;
-    }
-
-    .trail-stop {
+    .services-grid {
       display: flex;
-      align-items: center;
-      margin-bottom: 3.5rem;
-      position: relative;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
     }
 
-    .trail-stop:nth-child(odd) {
-      flex-direction: row;
-      justify-content: flex-start;
-    }
-
-    .trail-stop:nth-child(even) {
-      flex-direction: row-reverse;
-      justify-content: flex-start;
-    }
-
-    .trail-card {
+    .service-card {
       background: #fff;
       border: 1px solid #e0ece4;
       border-radius: 16px;
       padding: 2rem 1.75rem;
-      width: calc(50% - 3rem);
+      flex: 1;
       box-shadow: 0 3px 14px rgba(0,0,0,0.07);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
+      text-align: center;
     }
 
-    .trail-card:hover {
+    .service-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 8px 24px rgba(0,0,0,0.1);
     }
 
-    .trail-card { cursor: pointer; }
-
-    .trail-card .suitable-for {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
-      opacity: 0;
-      margin-top: 0;
-    }
-
-    .trail-card.open .suitable-for {
-      max-height: 300px;
-      opacity: 1;
-      margin-top: 1.25rem;
-    }
-
-    .suitable-for p {
-      font-size: 0.9rem;
-      color: #555;
-      line-height: 1.7;
-      border-top: 1px solid #e8f3ec;
-      padding-top: 1.1rem;
-    }
-
-    /* little hint arrow that flips when open */
-    .trail-card .card-toggle-hint {
-      display: inline-block;
-      font-size: 0.75rem;
-      color: #4a8c62;
-      margin-top: 0.75rem;
-      user-select: none;
-    }
-
-    .trail-card .card-toggle-hint::after {
-      content: ' ↓ find out more';
-    }
-
-    .trail-card.open .card-toggle-hint::after {
-      content: ' ↑ hide';
-    }
-
-    .trail-stop:nth-child(odd) .trail-card  { margin-right: auto; }
-    .trail-stop:nth-child(even) .trail-card { margin-left: auto; }
-
-    .trail-card .trail-icon {
+    .service-card .service-icon {
       font-size: 2.8rem;
-      margin-bottom: 0.75rem;
       display: block;
+      margin-bottom: 0.75rem;
     }
 
-    .trail-card h3 {
+    .service-card h3 {
       color: #2e5e3e;
       font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .service-price {
-      display: inline-block;
-      background: #e8f5ee;
-      color: #2e5e3e;
-      font-weight: 700;
-      font-size: 1rem;
-      border-radius: 20px;
-      padding: 0.2rem 0.75rem;
       margin-bottom: 0.75rem;
-      border: 1px solid #b8ddc8;
     }
 
-    .trail-card p {
+    .service-card p {
       color: #555;
       font-size: 0.95rem;
       line-height: 1.65;
     }
 
-    .trail-node {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 52px;
-      height: 52px;
-      background: #2e5e3e;
-      border: 4px solid #faf9f6;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      z-index: 1;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      flex-shrink: 0;
-    }
-
-    .trail-paw {
-      position: absolute;
-      left: 50%;
-      font-size: 1rem;
-      opacity: 0.35;
-      transform: translateX(-50%);
-      pointer-events: none;
-      user-select: none;
+    @media (max-width: 768px) {
+      .services-grid {
+        flex-direction: column;
+      }
     }
 
     /* GALLERY */
@@ -760,6 +648,61 @@
       transform: translateY(0);
     }
 
+    /* PRICING */
+    .pricing-section {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 3rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .pricing-section h2 {
+      font-size: 2rem;
+      color: #2e5e3e;
+      margin-bottom: 0.5rem;
+    }
+
+    .pricing-list {
+      list-style: none;
+      margin-top: 1.5rem;
+      border: 1px solid #e0ece4;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+    }
+
+    .pricing-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid #e8f3ec;
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    .pricing-list li:last-child {
+      border-bottom: none;
+    }
+
+    .pricing-list .price-name {
+      text-align: left;
+    }
+
+    .pricing-list .price-name small {
+      display: block;
+      font-size: 0.8rem;
+      color: #888;
+    }
+
+    .pricing-list .price-amount {
+      font-weight: 700;
+      color: #2e5e3e;
+      font-size: 1.05rem;
+      white-space: nowrap;
+    }
+
     /* Hero image position for landscape/desktop — shifts image down so head isn't cropped */
     @media (min-width: 769px) {
       .hero {
@@ -777,32 +720,6 @@
         font-size: 2.2rem;
       }
 
-      /* trail collapses to single column on mobile */
-      .trail::before {
-        left: 24px;
-        transform: none;
-      }
-
-      .trail-stop,
-      .trail-stop:nth-child(even) {
-        flex-direction: row !important;
-        justify-content: flex-start !important;
-        padding-left: 60px;
-      }
-
-      .trail-card {
-        width: 100% !important;
-        margin: 0 !important;
-      }
-
-      .trail-node {
-        left: 24px;
-        transform: translateX(-50%);
-      }
-
-      .trail-paw {
-        left: 24px;
-      }
     }
 
     @media (max-width: 500px) {
@@ -861,7 +778,7 @@
   <nav>
     <span class="brand">
       <div class="brand-row">
-        <img class="nav-logo" src="Wild Paws logo2.png" alt="Wild Paws logo" />
+        <img class="nav-logo" src="wild paws logo 3.png" alt="Wild Paws logo" />
       </div>
     </span>
     <button class="hamburger" id="hamburger" aria-label="Open menu">
@@ -940,55 +857,55 @@
     <h2>My Services</h2>
     <div class="divider" style="margin: 0 auto 0.5rem;"></div>
 
-    <div class="trail">
+    <div class="services-grid">
 
-      <span class="trail-paw" style="top: 18%;">🐾</span>
-      <span class="trail-paw" style="top: 52%; transform: translateX(-50%) rotate(20deg);">🐾</span>
-      <span class="trail-paw" style="top: 82%; transform: translateX(-60%) rotate(-15deg);">🐾</span>
-
-      <div class="trail-stop fade-in">
-        <div class="trail-card">
-          <span class="trail-icon">🐩🌳</span>
-          <h3>Group Walks</h3>
-          <span class="service-price">£15 per walk</span>
-          <p>Small-group adventures for sociable dogs who love spending time with their 'furriends'. Kept small so every dog still gets proper time and attention.</p>
-          <span class="card-toggle-hint"></span>
-          <div class="suitable-for">
-            <p>Walks go out in small groups with lots of chance to run, sniff, and socialise. I keep groups small on purpose — usually 3–4 dogs — so each one still gets proper attention and I can keep a close eye on how they're getting on. You'll get a photo or video message after every walk so you know exactly what they got up to.</p>
-          </div>
-        </div>
-        <div class="trail-node">🌿</div>
+      <div class="service-card fade-in">
+        <span class="service-icon">🐩🌳</span>
+        <h3>Group Walks</h3>
+        <p>Small-group adventures for sociable dogs who love spending time with their 'furriends'. Walks go out in small groups — usually 3–4 dogs — so each one still gets proper attention. You'll get a photo or video message after every walk.</p>
       </div>
 
-      <div class="trail-stop fade-in">
-        <div class="trail-card">
-          <span class="trail-icon">🐕‍🦺🌲</span>
-          <h3>Solo Walks</h3>
-          <span class="service-price">£19 per walk</span>
-          <p>One-on-one time for dogs who like their own space and pace. Full attention, no distractions — just your dog and the best parks in South Liverpool.</p>
-          <span class="card-toggle-hint"></span>
-          <div class="suitable-for">
-            <p>Your dog gets me all to themselves — no distractions, no other dogs, just a proper one-on-one adventure. This is ideal for nervous or reactive dogs, puppies still finding their feet, or dogs who simply prefer their own company. I'll pick routes that suit them and go at their pace. You get a photo and message after every walk.</p>
-          </div>
-        </div>
-        <div class="trail-node">🐕</div>
+      <div class="service-card fade-in">
+        <span class="service-icon">🐕‍🦺🌲</span>
+        <h3>Solo Walks</h3>
+        <p>One-on-one time for dogs who like their own space and pace. Ideal for nervous or reactive dogs, puppies still finding their feet, or dogs who simply prefer their own company. Full attention, no distractions.</p>
       </div>
 
-      <div class="trail-stop fade-in">
-        <div class="trail-card">
-          <span class="trail-icon">🏠🪴</span>
-          <h3>Drop-In Visits</h3>
-          <span class="service-price">£13–£15 per visit</span>
-          <p>A check-in visit with loads of fuss when you can't make it home — usually 30 minutes long. Perfect for busy days or dogs who just need a midday pick-me-up.</p>
-          <span class="card-toggle-hint"></span>
-          <div class="suitable-for">
-            <p>I come to you — let myself in, have some playtime either indoors or outside, make sure they're fed and settled, then lock up on the way out. Perfect for long work days, unexpected late finishes, or dogs who just need a midday break. I'll send you a message once I'm done so you're never left wondering.</p>
-          </div>
-        </div>
-        <div class="trail-node">🐾</div>
+      <div class="service-card fade-in">
+        <span class="service-icon">🏠🪴</span>
+        <h3>Drop-In Visits</h3>
+        <p>A check-in visit with loads of fuss when you can't make it home — usually 30 minutes. I'll let myself in, have some playtime, make sure they're fed and settled, then send you a message once done.</p>
       </div>
 
     </div>
+  </div>
+
+  <!-- PRICING -->
+  <div class="pricing-section fade-in">
+    <h2>Prices</h2>
+    <div class="divider" style="margin: 0 auto 0.5rem;"></div>
+    <ul class="pricing-list">
+      <li>
+        <span class="price-name">Group Walk<small>1 dog</small></span>
+        <span class="price-amount">£15</span>
+      </li>
+      <li>
+        <span class="price-name">Group Walk<small>2 dogs, same household</small></span>
+        <span class="price-amount">£26</span>
+      </li>
+      <li>
+        <span class="price-name">Solo Walk<small>1 dog</small></span>
+        <span class="price-amount">£19</span>
+      </li>
+      <li>
+        <span class="price-name">Solo Walk<small>2 dogs, same household</small></span>
+        <span class="price-amount">£29</span>
+      </li>
+      <li>
+        <span class="price-name">Drop-In Visit</span>
+        <span class="price-amount">£13–£15</span>
+      </li>
+    </ul>
   </div>
 
   <!-- GALLERY -->
@@ -1005,11 +922,12 @@
         <div class="gallery-item"><img src="images/IMG_1418.jpeg" alt="Wild Paws dog walk"></div>
         <div class="gallery-item"><img src="images/IMG_1458.jpeg" alt="Wild Paws dog walk"></div>
         <div class="gallery-item"><img src="images/IMG_1503.jpeg" alt="Wild Paws dog walk"></div>
-        <div class="gallery-item"><img src="images/IMG_1528.jpeg" alt="Wild Paws dog walk"></div>
+        <div class="gallery-item"><img src="images/IMG_1967.jpeg" alt="Wild Paws dog walk"></div>
         <div class="gallery-item"><img src="images/IMG_1634.JPG" alt="Wild Paws dog walk"></div>
-        <div class="gallery-item"><img src="images/IMG_1678.jpeg" alt="Wild Paws dog walk" style="object-position: center 80%;"></div>
-        <div class="gallery-item"><img src="images/IMG_1751.jpeg" alt="Wild Paws dog walk"></div>
+        <div class="gallery-item"><img src="images/IMG_2159.jpeg" alt="Wild Paws dog walk"></div>
+        <div class="gallery-item"><img src="images/IMG_2089.jpeg" alt="Wild Paws dog walk"></div>
         <div class="gallery-item"><img src="images/IMG_1785.jpeg" alt="Wild Paws dog walk" style="transform: scale(1.8); transform-origin: center center;"></div>
+        <div class="gallery-item"><img src="images/IMG_1999.jpeg" alt="Wild Paws dog walk"></div>
       </div>
 
       <div class="gallery-nav">
@@ -1163,10 +1081,6 @@
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Toggle suitable-for on card click
-    document.querySelectorAll('.trail-card').forEach(card => {
-      card.addEventListener('click', () => card.classList.toggle('open'));
-    });
 
     // Contact form AJAX submission
     const contactForm = document.getElementById('contact-form');
