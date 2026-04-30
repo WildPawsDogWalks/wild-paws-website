@@ -54,6 +54,24 @@
       display: block;
     }
 
+    .nav-socials {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      margin-left: 1.5rem;
+    }
+
+    .nav-socials a {
+      color: #d4eadb;
+      display: flex;
+      align-items: center;
+      transition: color 0.2s;
+    }
+
+    .nav-socials a:hover {
+      color: #fff;
+    }
+
     .hamburger {
       display: none;
     }
@@ -631,9 +649,92 @@
     footer {
       background: #1e3e2a;
       color: #8fbfa0;
-      text-align: center;
-      padding: 1.5rem 2rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem 2rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr;
+      gap: 2rem;
+    }
+
+    .footer-logo img {
+      width: 130px;
+      margin-bottom: 1rem;
+    }
+
+    .footer-logo p {
+      color: #8fbfa0;
       font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.45rem;
+    }
+
+    .footer-col ul li a {
+      color: #8fbfa0;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover {
+      color: #fff;
+    }
+
+    .footer-col p {
+      color: #8fbfa0;
+      margin-bottom: 0.45rem;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #2e5e3e;
+      text-align: center;
+      padding: 1rem 2rem;
+      font-size: 0.8rem;
+      color: #6a9e80;
+    }
+
+    .footer-badges {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .footer-badge {
+      background: #2e5e3e;
+      border-radius: 8px;
+      padding: 0.4rem 0.75rem;
+      font-size: 0.78rem;
+      color: #c8e6d4;
+    }
+
+    @media (max-width: 900px) {
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-main {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* SCROLL FADE TRANSITIONS for other sections */
@@ -778,7 +879,7 @@
   <nav>
     <span class="brand">
       <div class="brand-row">
-        <img class="nav-logo" src="wild paws logo 3.png" alt="Wild Paws logo" />
+        <img class="nav-logo" src="logos/wild paws logo 3.png" alt="Wild Paws logo" />
       </div>
     </span>
     <button class="hamburger" id="hamburger" aria-label="Open menu">
@@ -793,12 +894,25 @@
       <li><a href="#area">Area</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <div class="nav-socials">
+      <a href="https://www.instagram.com/wildpawsdogwalks/?hl=en" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61588122314005" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://wa.me/447864919184" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.648 4.826 1.782 6.852L2 30l7.352-1.754A13.94 13.94 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2Zm7.2 19.4c-.3.84-1.76 1.62-2.4 1.68-.64.06-1.24.28-4.18-.88-3.52-1.38-5.76-4.98-5.94-5.22-.18-.24-1.44-1.92-1.44-3.66s.9-2.6 1.24-2.96c.34-.36.74-.44 .98-.44l.72.012c.24.004.54-.092.84.64.3.732.98 2.52.98 2.52s.18.4-.04.66l-.62.72c-.22.22-.46.46-.2.9.26.44 1.18 1.94 2.52 3.14 1.72 1.54 3.18 2.02 3.62 2.24.44.22.7.18.96-.1.26-.28 1.1-1.28 1.4-1.72.3-.44.58-.36 .98-.22.4.14 2.52 1.18 2.96 1.4.44.22.72.34.82.52.1.34-.2 1.68-.5 2.52Z"/></svg>
+      </a>
+    </div>
   </nav>
 
   <!-- HERO — replace dog-hero.jpg with your own photo -->
   <div class="hero">
     <div class="hero-content">
-      <img src="wpdw4(v2).png" alt="Wild Paws Dog Walks" style="max-width: 620px; width: 90%; margin-bottom: 1.5rem;" />
+      <h1>Wild Paws Dog Walks</h1>
+      <p class="tagline">Hi, I'm Emily, here to make your dog's day brighter when you can't be there.</p>
+      <p class="sub-tagline">A dog walker with fun, safety and reliability at the heart of each adventure.</p>
       <a href="#contact" class="hero-cta">Book a Walk 🐾</a>
     </div>
   </div>
@@ -807,14 +921,14 @@
   <div class="trust-strip">
     <div class="inner">
       <div class="trust-item fade-in">
-        <div class="trust-icon">🛡️</div>
+        <div class="trust-icon"><img src="images/Protectivity logo.png" alt="Protectivity Insurance" style="width:80px;height:80px;object-fit:contain;"></div>
         <div>
           <h3>Fully Insured</h3>
           <p>Complete peace of mind — your dog is always covered.</p>
         </div>
       </div>
       <div class="trust-item fade-in">
-        <div class="trust-icon">✅</div>
+        <div class="trust-icon"><img src="images/DBS-logo.webp" alt="DBS Checked" style="width:80px;height:80px;object-fit:contain;"></div>
         <div>
           <h3>DBS Checked</h3>
           <p>Professionally vetted so you can trust who's at your door.</p>
@@ -842,7 +956,7 @@
     <h2>About Me</h2>
     <div class="divider"></div>
     <p>
-      Hi, I'm Emily — the person behind Wild Paws. I'm a life-long dog lover and animal behaviour university graduate. I love to keep tails wagging and noses sniffing when you can't be there. I know how busy life can get, that's where I come in. I will pick your dog up, safely transport them to the park (after picking up a couple of other doggie friends on the way), a wonderful Wild Paws walk, and back home safely, ready to relax.
+      Hi, I'm Emily — the human behind Wild Paws. I'm a life-long dog lover and animal behaviour university graduate. I love to keep tails wagging and noses sniffing when you can't be there. I know how busy life can get, that's where I come in. I will pick your dog up, safely transport them to the park (after picking up a couple of other doggie friends on the way), a wonderful Wild Paws walk, and back home safely, ready to relax.
     </p>
     <p>
       I always have your dog's welfare as my number one priority (fun being a close second) and treat them as though they are my own. Growing up with dogs at home, I know how special they are — truly part of the family!
@@ -959,7 +1073,7 @@
 
         <div class="area-info">
           <h3>Based in South Liverpool</h3>
-          <p>I know every park, trail, and green space worth visiting. Here's where I currently cover:</p>
+          <p>Here's where I currently cover:</p>
           <div class="area-tags">
             <span class="area-tag">Aigburth</span>
             <span class="area-tag">Allerton</span>
@@ -1036,7 +1150,71 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2026 Wild Paws Dog Walks &mdash; South Liverpool</p>
+    <div class="footer-main">
+
+      <div class="footer-logo">
+        <img src="logos/wild paws logo 3.png" alt="Wild Paws Dog Walks" />
+        <p>Making tails wag across Liverpool — one walk at a time.</p>
+        <div class="footer-badges">
+          <span class="footer-badge">🛡️ Fully Insured</span>
+          <span class="footer-badge">✅ DBS Checked</span>
+          <span class="footer-badge">🏥 Canine First Aid</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Group Walks</a></li>
+          <li><a href="#services">Solo Walks</a></li>
+          <li><a href="#services">Drop-In Visits</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#area">Service Area</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Terms &amp; Conditions</h4>
+        <ul>
+          <li><a href="#">Terms and Conditions</a></li>
+          <li><a href="#">How I Keep Your Pet Safe</a></li>
+          <li><a href="#">Pet Sickness &amp; Diarrhoea Policy</a></li>
+          <li><a href="#">Kennel Cough Policy</a></li>
+          <li><a href="#">Hot Weather Policy</a></li>
+          <li><a href="#">Female Dogs in Heat Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Get in Touch</h4>
+        <p>📍 Liverpool</p>
+        <p style="display:flex;align-items:center;gap:0.5rem;"><a href="https://wa.me/447864919184" style="color:#8fbfa0;display:flex;align-items:center;gap:0.4rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.648 4.826 1.782 6.852L2 30l7.352-1.754A13.94 13.94 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2Zm7.2 19.4c-.3.84-1.76 1.62-2.4 1.68-.64.06-1.24.28-4.18-.88-3.52-1.38-5.76-4.98-5.94-5.22-.18-.24-1.44-1.92-1.44-3.66s.9-2.6 1.24-2.96c.34-.36.74-.44 .98-.44l.72.012c.24.004.54-.092.84.64.3.732.98 2.52.98 2.52s.18.4-.04.66l-.62.72c-.22.22-.46.46-.2.9.26.44 1.18 1.94 2.52 3.14 1.72 1.54 3.18 2.02 3.62 2.24.44.22.7.18.96-.1.26-.28 1.1-1.28 1.4-1.72.3-.44.58-.36 .98-.22.4.14 2.52 1.18 2.96 1.4.44.22.72.34.82.52.1.34-.2 1.68-.5 2.52Z"/></svg>
+          WhatsApp Me</a>
+        </p>
+        <p style="display:flex;align-items:center;gap:0.5rem;"><a href="https://www.instagram.com/wildpawsdogwalks/?hl=en" target="_blank" rel="noopener" style="color:#8fbfa0;display:flex;align-items:center;gap:0.4rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Instagram</a>
+        </p>
+        <p style="display:flex;align-items:center;gap:0.5rem;"><a href="https://www.facebook.com/profile.php?id=61588122314005" target="_blank" rel="noopener" style="color:#8fbfa0;display:flex;align-items:center;gap:0.4rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          Facebook</a>
+        </p>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Wild Paws Dog Walks &mdash; South Liverpool. All rights reserved.</p>
+    </div>
   </footer>
 
   <script>
