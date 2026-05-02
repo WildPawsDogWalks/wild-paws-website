@@ -209,6 +209,30 @@
       text-align: center;
     }
 
+    .about-photo {
+      width: 280px;
+      height: 280px;
+      min-width: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      float: left;
+      margin: -60px 2rem 1rem -240px;
+      border: 3px solid #4a8c62;
+      shape-outside: circle(50%);
+      background: #e8f0eb;
+      display: block;
+    }
+
+    .about-body {
+      text-align: left;
+    }
+
+    .about-body::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
     .about-section h2 {
       font-size: 2rem;
       color: #2e5e3e;
@@ -955,15 +979,18 @@
   <div class="about-section fade-in" id="about">
     <h2>About Me</h2>
     <div class="divider"></div>
-    <p>
-      Hi, I'm Emily — the human behind Wild Paws. I'm a life-long dog lover and animal behaviour university graduate. I love to keep tails wagging and noses sniffing when you can't be there. I know how busy life can get, that's where I come in. I will pick your dog up, safely transport them to the park (after picking up a couple of other doggie friends on the way), a wonderful Wild Paws walk, and back home safely, ready to relax.
-    </p>
-    <p>
-      I always have your dog's welfare as my number one priority (fun being a close second) and treat them as though they are my own. Growing up with dogs at home, I know how special they are — truly part of the family!
-    </p>
-    <p>
-      With me, your dog can make new friends, explore the great outdoors, get lots of love and cuddles, all while you experience a guilt-free day away from your pooch. I make sure to keep the groups small (usually 3–4 dogs) so each dog gets lots of attention, plus I send picture/video updates after every walk so you can share the fun from wherever you are.
-    </p>
+    <div class="about-body">
+      <img src="images/about-me.jpg" alt="Emily" class="about-photo">
+      <p>
+        Hi, I'm Emily — the human behind Wild Paws. I'm a life-long dog lover and animal behaviour university graduate. I love to keep tails wagging and noses sniffing when you can't be there. I know how busy life can get, that's where I come in. I will pick your dog up, safely transport them to the park (after picking up a couple of other doggie friends on the way), a wonderful Wild Paws walk, and back home safely, ready to relax.
+      </p>
+      <p>
+        I always have your dog's welfare as my number one priority (fun being a close second) and treat them as though they are my own. Growing up with dogs at home, I know how special they are — truly part of the family!
+      </p>
+      <p>
+        With me, your dog can make new friends, explore the great outdoors, get lots of love and cuddles, all while you experience a guilt-free day away from your pooch. I make sure to keep the groups small (usually 3–4 dogs) so each dog gets lots of attention, plus I send picture/video updates after every walk so you can share the fun from wherever you are.
+      </p>
+    </div>
   </div>
 
   <!-- SERVICES — trail layout -->
@@ -974,19 +1001,19 @@
     <div class="services-grid">
 
       <div class="service-card fade-in">
-        <span class="service-icon">🐩🌳</span>
+        <span class="service-icon"><img src="images/group-walk.png" alt="Group Walks" style="width:140px;height:140px;object-fit:contain;"></span>
         <h3>Group Walks</h3>
         <p>Small-group adventures for sociable dogs who love spending time with their 'furriends'. Walks go out in small groups — usually 3–4 dogs — so each one still gets proper attention. You'll get a photo or video message after every walk.</p>
       </div>
 
       <div class="service-card fade-in">
-        <span class="service-icon"><img src="images/solo-walk.svg" alt="Solo Walks" style="width:180px;height:180px;object-fit:contain;"></span>
+        <span class="service-icon"><img src="images/solo-walk.svg" alt="Solo Walks" style="width:140px;height:140px;object-fit:contain;"></span>
         <h3>Solo Walks</h3>
         <p>One-on-one time for dogs who like their own space and pace. Ideal for nervous or reactive dogs, puppies still finding their feet, or dogs who simply prefer their own company. Full attention, no distractions.</p>
       </div>
 
       <div class="service-card fade-in">
-        <span class="service-icon"><img src="images/drop-ins.png" alt="Drop-In Visits" style="width:180px;height:180px;object-fit:contain;"></span>
+        <span class="service-icon"><img src="images/drop-ins.png" alt="Drop-In Visits" style="width:140px;height:140px;object-fit:contain;"></span>
         <h3>Drop-In Visits</h3>
         <p>A check-in visit with loads of fuss when you can't make it home — usually 30 minutes. I'll let myself in, have some playtime, make sure they're fed and settled, then send you a message once done.</p>
       </div>
