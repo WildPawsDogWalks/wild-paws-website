@@ -241,6 +241,16 @@
       position: absolute;
       top: -120px;
       left: -310px;
+      overflow: hidden;
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 56% 28%;
+      transform: scale(1.2);
+      transform-origin: 56% 28%;
     }
 
     .about-photo-right {
@@ -1037,6 +1047,9 @@
     <h2>About Me</h2>
     <div class="divider"></div>
     <div class="about-body">
+      <div class="about-photo">
+        <img src="images/about-me-img.webp" alt="Emily from Wild Paws">
+      </div>
       <p>
         Hi, I'm Emily — the human behind Wild Paws. I'm a life-long dog lover and animal behaviour university graduate. I love to keep tails wagging and noses sniffing when you can't be there. I know how busy life can get, that's where I come in. I will pick your dog up, safely transport them to the park (after picking up a couple of other doggie friends on the way), a wonderful Wild Paws walk, and back home safely, ready to relax.
       </p>
@@ -1046,7 +1059,6 @@
       <p>
         With me, your dog can make new friends, explore the great outdoors, get lots of love and cuddles, all while you experience a guilt-free day away from your pooch. I make sure to keep the groups small (usually 3–4 dogs) so each dog gets lots of attention, plus I send picture/video updates after every walk so you can share the fun from wherever you are.
       </p>
-      <img src="images/about-me-img.webp" alt="Emily from Wild Paws" class="about-photo" style="object-position: 56% 28%;">
       <img src="logos/Wild%20Paws%20Logo%20(new%20font).webp" alt="Wild Paws Dog Walks logo" class="about-photo-right">
     </div>
   </div>
@@ -1248,7 +1260,7 @@
     <div class="footer-main">
 
       <div class="footer-logo">
-        <img src="logos/wpdwlogonew.svg" alt="Wild Paws Dog Walks" />
+        <img src="logos/wpdw%20logo%20new%20font%202.webp" alt="Wild Paws Dog Walks" />
         <p>Making tails wag across Liverpool — one walk at a time.</p>
         <div class="footer-badges">
           <span class="footer-badge">🛡️ Fully Insured</span>
