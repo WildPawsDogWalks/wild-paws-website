@@ -65,6 +65,12 @@
       display: block;
     }
 
+    nav .brand-link {
+      display: inline-block;
+      line-height: 0;
+      cursor: pointer;
+    }
+
     .nav-socials {
       display: flex;
       gap: 0.75rem;
@@ -359,6 +365,11 @@
     @media (max-width: 768px) {
       .services-grid {
         flex-direction: column;
+      }
+
+      nav .brand-link {
+        pointer-events: none;
+        cursor: default;
       }
 
       .about-photo,
@@ -970,7 +981,9 @@
   <nav>
     <span class="brand">
       <div class="brand-row">
-        <img class="nav-logo" src="logos/wpdw%20logo%20new%20font%202.webp" alt="Wild Paws logo" />
+        <a href="#" class="brand-link" aria-label="Back to top">
+          <img class="nav-logo" src="logos/wpdw%20logo%20new%20font%202.webp" alt="Wild Paws logo" />
+        </a>
       </div>
     </span>
     <button class="hamburger" id="hamburger" aria-label="Open menu">
